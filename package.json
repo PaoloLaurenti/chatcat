@@ -1,0 +1,25 @@
+{
+  "name": "chatcat",
+  "version": "1.0.0",
+  "description": "A node.js web application created following an udemy tutorial",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaoloLaurenti/chatcat.git"
+  },
+  "author": "Paolo Laurenti",
+  "license": "MIT",
+  "engines": {
+    "node": "4.2.2"
+  },
+  "bugs": {
+    "url": "https://github.com/PaoloLaurenti/chatcat/issues"
+  },
+  "homepage": "https://github.com/PaoloLaurenti/chatcat#readme",
+  "dependencies": {
+    "express": "4.13.3"
+  }
+}
