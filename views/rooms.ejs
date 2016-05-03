@@ -10,6 +10,7 @@
 		'use strict';
 		$(() => {
 			let socket = io('<%= host %>/roomsList');
+			let newRoomInput = $("input[name='roomName']");
 
 			let renderChatRooms = chatrooms => {
 				let roomsListDiv = $('#roomsListUL');
@@ -26,6 +27,13 @@
 			// Event listener for chatRoomsList
 			socket.on('chatRoomsList', chatrooms => {
 				renderChatRooms(JSON.parse(chatrooms));
+			});
+
+			$('#createBtn').on('click', () => {
+					if (newRoomInput.val() !== '') {
+						socket.emit('createNewRoom', newRoomInput.val());
+						newRoomInput.val('');
+					}
 			});
 		});
 	</script>
@@ -46,10 +54,6 @@
 		</div>
 		<div class="roomsListDiv">
 			<ul class="roomsList" id="roomsListUL">
-			<!-- Loop list items here -->
-				<!-- <a href="chatroom.htm"><li>World Cuisine</li></a>
-				<a href="chatroom.htm"><li>Coffee and Conversations</li></a> -->
-			<!-- Loop ends -->
 			</ul>
 		</div>
 	</div>
